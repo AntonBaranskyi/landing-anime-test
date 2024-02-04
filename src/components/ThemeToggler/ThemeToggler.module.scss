@@ -1,0 +1,17 @@
+.themeToggler {
+  display: flex;
+  align-items: center;
+
+  padding-left: 3px;
+  padding-block: 2px;
+
+  width: 54px;
+  height: 29px;
+  background-color: #fff;
+  border-radius: 50px;
+
+  .toggler {
+    height: 25px;
+    width: 25px;
+  }
+}

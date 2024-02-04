@@ -1,0 +1,17 @@
+@import '../../styles/mixins/mixins.scss';
+
+.advertisement {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    grid-column: 9/13;
+
+    justify-content: end;
+  }
+
+  img {
+    height: 600px;
+    width: 300px;
+  }
+}

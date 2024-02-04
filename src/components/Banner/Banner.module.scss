@@ -1,0 +1,172 @@
+@import '../../styles/mixins/mixins.scss';
+
+.banner {
+  display: flex;
+  position: relative;
+  border-radius: 30px;
+
+  background-image: url('../../assets/images/banner.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include onDesktop {
+    background: none;
+
+    background-color: #fff;
+  }
+
+  // overflow: hidden;
+
+  position: relative;
+
+  @include onTablet {
+    margin-bottom: 10px;
+  }
+
+  // height: 129px;
+
+  .bannerContent {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    padding: 20px;
+    z-index: 2;
+
+    @include onTablet {
+      gap: 24px;
+      padding: 30px;
+    }
+
+    @include onDesktop {
+      padding-inline: 56px;
+
+      height: 184px;
+      justify-content: space-between;
+    }
+
+    .gamePhoto {
+      height: 89px;
+      width: 89px;
+
+      @include onTablet {
+        height: 120px;
+        width: 120px;
+      }
+    }
+
+    .gameTitle {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      letter-spacing: 0.5px;
+
+      color: #fff;
+
+      @include onTablet {
+        font-size: 35px;
+        line-height: 42px;
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #161c3a;
+    opacity: 0.8;
+    border-radius: 30px;
+
+    z-index: 1;
+  }
+}
+
+.bannerMore {
+  display: flex;
+  justify-content: center;
+
+  gap: 10px;
+
+  align-items: center;
+
+  .moreText {
+    font-size: 20px;
+    line-height: 26px;
+
+    color: #707070;
+  }
+
+  .burger {
+    height: 15px;
+  }
+
+  margin-bottom: 10px;
+}
+
+.background {
+  @include onDesktop {
+    background-color: #fcfcfc;
+  }
+}
+
+.additionalBlock {
+  position: absolute;
+  bottom: -20px; // Adjust the positioning as needed
+  left: 0;
+  width: 100%;
+  height: 100px; // Adjust the height as needed
+  background-color: #fff; // Set the background color for the additional block
+  border-radius: 40px; // Set the border-radius for the additional block
+  z-index: 0; // Ensure it's behind the main content
+}
+
+.playersInfo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  z-index: 1;
+
+  .playersInfoDetails {
+    display: flex;
+    flex-direction: column;
+
+    .playerTitle {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 32px;
+      letter-spacing: 0px;
+
+      color: #fff;
+    }
+
+    .playersVote {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 21px;
+
+      color: #fff;
+    }
+
+    .playerRating {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 21px;
+
+      color: #fff;
+    }
+
+    .playerRatingItem {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+
+      color: #f9b936;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.mainTitle {
+  font-size: 35px;
+  font-weight: 900;
+  line-height: 45px;
+  letter-spacing: 0.5px;
+  text-align: center;
+
+  background: linear-gradient(90deg, #0dd0ba 0%, #2a86e5 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+
+  margin-bottom: 20px;
+}
+
+.mainText {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.5px;
+  text-align: left;
+
+  margin-bottom: 60px;
+}

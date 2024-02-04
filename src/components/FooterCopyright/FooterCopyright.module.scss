@@ -1,0 +1,20 @@
+@import '../../styles/mixins/mixins.scss';
+
+.copyText {
+  grid-column: 1/-1;
+
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.5px;
+  text-align: center;
+
+  color: white;
+
+  @include onDesktop {
+    grid-column: 6/12;
+    grid-row: 3/6;
+    text-align: left;
+  }
+}

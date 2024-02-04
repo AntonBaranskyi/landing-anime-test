@@ -1,0 +1,57 @@
+@import '../../styles/mixins/mixins.scss';
+
+.footerTop {
+  background: #fff;
+  border-radius: 20px;
+
+  grid-column: 1/-1;
+
+  padding-top: 75px;
+  padding-bottom: 27px;
+  padding-inline: 30px;
+
+  margin-bottom: 23px;
+
+  @include onDesktop {
+    grid-column: 1/5;
+    padding-top: 85px;
+  }
+
+  .footerTopTitle {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.5px;
+    text-align: center;
+
+    margin-bottom: 65px;
+  }
+
+  .footerTopText {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.5px;
+    text-align: center;
+
+    color: #0dd0ba;
+
+    margin-bottom: 24px;
+
+    @include onDesktop {
+      margin-bottom: 35px;
+    }
+
+    .footerTextMain {
+      display: block;
+      padding-bottom: 12px;
+    }
+  }
+
+  .socialWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}

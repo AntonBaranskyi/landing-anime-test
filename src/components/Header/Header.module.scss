@@ -1,0 +1,75 @@
+@import '../../styles/mixins/mixins.scss';
+
+.header {
+  .headerTop {
+    background: linear-gradient(90deg, #0dd0ba 0%, #2a86e5 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    padding-block: 11px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .menu {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    @include onTablet {
+      flex-grow: 1;
+    }
+
+    .menuListItem {
+      display: flex;
+      align-items: center;
+      list-style: none;
+
+      gap: 3px;
+
+      cursor: pointer;
+
+      .menuLink {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+
+        color: #fff;
+      }
+    }
+
+    .menuIcon {
+      // width: 12px;
+      // height: 14px;
+    }
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    @include onTablet {
+      margin-right: 15px;
+    }
+
+    @include onDesktop {
+      margin-right: 20px;
+    }
+
+    .socialLink {
+      padding-inline: 10px;
+      padding-block: 7px;
+    }
+  }
+}

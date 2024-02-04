@@ -1,0 +1,18 @@
+@import '../../styles/mixins/mixins.scss';
+
+.main {
+  padding-top: 20px;
+  background-color: #fcfcfc;
+
+  .grid {
+    @include pageGrid();
+  }
+
+  .mainContent {
+    grid-column: 1/-1;
+
+    @include onDesktop {
+      grid-column: 1/9;
+    }
+  }
+}

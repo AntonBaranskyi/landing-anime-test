@@ -1,0 +1,42 @@
+@import '../../styles/mixins/mixins.scss';
+
+.footer {
+  margin-bottom: 28px;
+
+  background: linear-gradient(90deg, #0dd0ba 0%, #2a86e5 100%);
+  border-radius: 40px;
+
+  padding: 20px;
+
+  .containerFooter {
+    @include onDesktop {
+      max-width: 1170px;
+      padding-inline: 120px;
+
+      margin-inline: auto;
+    }
+  }
+
+  @include onTablet {
+    padding: 30px;
+  }
+
+  .grid {
+    @include pageGrid();
+  }
+}
+
+.content {
+  padding-inline: 16px;
+  @include onTablet {
+    padding-inline: 24px;
+  }
+
+  @include onDesktop {
+    padding-inline: 28px;
+
+    margin-inline: auto;
+  }
+
+  background-color: #fcfcfc;
+}
