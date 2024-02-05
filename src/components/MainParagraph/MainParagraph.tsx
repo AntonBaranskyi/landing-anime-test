@@ -1,5 +1,3 @@
-import React from 'react';
-
 import styles from './MainParagrapth.module.scss';
 
 export const MainParagraph = () => {
