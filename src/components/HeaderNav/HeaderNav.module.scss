@@ -1,0 +1,64 @@
+@import '../../styles/mixins/mixins.scss';
+
+.menu {
+  @include onTablet {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  @include onTablet {
+    flex-grow: 1;
+  }
+
+  .menuListItem {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    gap: 3px;
+
+    cursor: pointer;
+
+    .menuLink {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 0.5px;
+
+      color: #fff;
+    }
+  }
+}
+
+.burgerMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  @include onTablet {
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .menuListItem {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    gap: 3px;
+
+    cursor: pointer;
+
+    .menuLink {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 0.5px;
+
+      color: #707070;
+    }
+  }
+}

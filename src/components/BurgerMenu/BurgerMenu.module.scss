@@ -1,0 +1,17 @@
+.menu {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+
+  .menuContent {
+    z-index: 1;
+    overflow-y: auto;
+    height: calc(100vh + 30px);
+  }
+}

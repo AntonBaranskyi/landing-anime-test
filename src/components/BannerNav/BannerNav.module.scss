@@ -1,0 +1,25 @@
+.bannerMenu {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 28px;
+
+  .bannerList {
+    list-style: none;
+
+    .bannerLink {
+      text-decoration: none;
+
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+      letter-spacing: 0.5px;
+
+      background: linear-gradient(90deg, #0dd0ba 0%, #2a86e5 100%);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+}
