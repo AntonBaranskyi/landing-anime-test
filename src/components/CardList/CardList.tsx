@@ -1,11 +1,20 @@
 import styles from './CardList.module.scss';
 import { Card } from '../Card';
+import { useContext } from 'react';
+import { MainContext } from '../../context/MainContext';
 
 export const CardList = () => {
+  const { isDarkMode } = useContext(MainContext);
+
   return (
     <div className={styles.listWrapper}>
       <div className={styles.listExtraInfo}>
-        <h2 className={styles.listText}>Similar articles</h2>
+        <h2
+          className={styles.listText}
+          data-theme={isDarkMode ? 'dark' : 'light'}
+        >
+          Similar articles
+        </h2>
         <div className={styles.listProgress} />
       </div>
 

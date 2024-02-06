@@ -1,10 +1,14 @@
+import { useContext } from 'react';
+import { MainContext } from '../../context/MainContext';
 import styles from './MainParagrapth.module.scss';
 
 export const MainParagraph = () => {
+  const { isDarkMode } = useContext(MainContext);
+
   return (
     <>
       <h2 className={styles.mainTitle}>Lorem Ipsum is simply dummy</h2>
-      <p className={styles.mainText}>
+      <p className={styles.mainText} data-theme={isDarkMode ? 'dark' : 'light'}>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and

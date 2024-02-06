@@ -10,7 +10,7 @@ export const BurgerContent = () => {
         <Input />
       </div>
       <div className={styles.bottomNavWrapper}>
-        <HeaderBottomNav />
+        <HeaderBottomNav isInsideBurger />
       </div>
 
       <div className=''>

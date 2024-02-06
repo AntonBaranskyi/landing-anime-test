@@ -12,6 +12,16 @@
     height: 42px;
 
     width: -webkit-fill-available;
+
+    &[data-theme='dark'] {
+      background: #183a5d;
+      border: none;
+
+      color: #fff;
+      &::placeholder {
+        color: #fff;
+      }
+    }
   }
 
   .inputSearch {

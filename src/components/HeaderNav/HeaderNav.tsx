@@ -9,7 +9,8 @@ import grayFilter from '../../assets/icons/gray/filter.png';
 import grayAndroid from '../../assets/icons/gray/android.png';
 import grayApple from '../../assets/icons/gray/apple.png';
 
-import React from 'react';
+import React, { useContext } from 'react';
+import { MainContext } from '../../context/MainContext';
 
 type Props = {
   isInsideBurger?: boolean;
@@ -59,6 +60,8 @@ const grayMenuItems = [
 export const HeaderNav: React.FC<Props> = ({ isInsideBurger = false }) => {
   const iteribleValue = isInsideBurger ? grayMenuItems : menuItems;
 
+  const { isDarkMode } = useContext(MainContext);
+
   return (
     <ul className={isInsideBurger ? styles.burgerMenu : styles.menu}>
       {iteribleValue.map((menuItem) => (
@@ -68,7 +71,13 @@ export const HeaderNav: React.FC<Props> = ({ isInsideBurger = false }) => {
             alt={menuItem.title}
             className={styles.menuIcon}
           />
-          <a className={styles.menuLink}> {menuItem.title}</a>
+          <a
+            className={styles.menuLink}
+            data-insideDark={isDarkMode && isInsideBurger ? true : null}
+          >
+            {' '}
+            {menuItem.title}
+          </a>
         </li>
       ))}
     </ul>

@@ -1,4 +1,7 @@
 .headerBottom {
+  &[data-theme='dark'] {
+    background-color: #0e1219;
+  }
   .headerBottomContent {
     display: flex;
     justify-content: space-between;
@@ -12,7 +15,6 @@
 
       gap: 61px;
     }
-
   }
   .logo {
     height: 18px;

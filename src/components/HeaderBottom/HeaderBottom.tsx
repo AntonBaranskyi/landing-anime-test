@@ -1,4 +1,5 @@
 import logo from '../../assets/images/logo.png';
+import logoLight from '../../assets/images/logo-light.png';
 import burger from '../../assets/icons/burger.png';
 
 import styles from './HeaderBottom.module.scss';
@@ -13,7 +14,7 @@ import { HeaderBottomNav } from '../HeaderBottomNav';
 export const HeaderBottom = () => {
   const isDekstop = useMediaQuery({ minWidth: 1024 });
 
-  const { onToggleBurger, isBurgerOpen } = useContext(MainContext);
+  const { onToggleBurger, isBurgerOpen, isDarkMode } = useContext(MainContext);
 
   const handleBurgerOpen = () => {
     onToggleBurger(true);
@@ -24,10 +25,17 @@ export const HeaderBottom = () => {
   };
 
   return (
-    <div className={styles.headerBottom}>
+    <div
+      className={styles.headerBottom}
+      data-theme={isDarkMode ? 'dark' : 'light'}
+    >
       <div className={`${styles.headerBottomContent} container`}>
         <div className={styles.headerBottomDesk}>
-          <img src={logo} alt='logo' className={styles.logo} />
+          <img
+            src={isDarkMode ? logoLight : logo}
+            alt='logo'
+            className={styles.logo}
+          />
 
           {isDekstop && <HeaderBottomNav />}
         </div>

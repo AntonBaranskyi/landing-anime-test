@@ -59,6 +59,10 @@
       letter-spacing: 0.5px;
 
       color: #707070;
+
+      &[data-insideDark='true'] {
+        color: #fff;
+      }
     }
   }
 }

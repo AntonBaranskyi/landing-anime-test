@@ -22,5 +22,13 @@
     letter-spacing: 0.5px;
 
     color: #2a86e5;
+
+    &[data-theme='dark'] {
+      color: #0dd0ba;
+    }
+
+    &[data-inside='true'] {
+      color: #2a86e5;
+    }
   }
 }

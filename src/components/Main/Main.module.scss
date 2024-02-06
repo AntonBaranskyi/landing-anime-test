@@ -4,6 +4,10 @@
   padding-top: 20px;
   background-color: #fcfcfc;
 
+  &[data-theme='dark'] {
+    background-color: #0e1219;
+  }
+
   .grid {
     @include pageGrid();
   }

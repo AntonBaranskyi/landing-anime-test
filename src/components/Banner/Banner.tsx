@@ -13,19 +13,26 @@ import { BannerNav } from '../BannerNav';
 export const Banner = () => {
   const isDekstop = useMediaQuery({ minWidth: 1024 });
 
-  const { onToggleBanner, isBannerOpen } = useContext(MainContext);
+  const { onToggleBanner, isBannerOpen, isDarkMode } = useContext(MainContext);
 
   const handleToggleBanner = () => {
     onToggleBanner();
   };
 
   return (
-    <div className={styles.background}>
-      <div className='container'>
+    <div
+      className={styles.background}
+      data-theme={isDarkMode ? 'dark' : 'light'}
+    >
+      <div className='container' style={{ marginBottom: '15px' }}>
         <div className={styles.banner}>
           <div className={styles.bannerContent}>
             <img className={styles.gamePhoto} src={game} alt='game' />
-            <h2 className={styles.gameTitle}>Lorem Ipsum is simply dummy</h2>
+            {isDekstop ? (
+              <div></div>
+            ) : (
+              <h2 className={styles.gameTitle}>Lorem Ipsum is simply dummy</h2>
+            )}
           </div>
 
           {isDekstop && (

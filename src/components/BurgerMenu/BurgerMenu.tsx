@@ -8,9 +8,9 @@ type Props = {
 };
 
 export const BurgerMenu: React.FC<Props> = ({ children }) => {
-  const { isBurgerOpen } = useContext(MainContext);
+  const { isBurgerOpen, isDarkMode } = useContext(MainContext);
   return (
-    <div className={styles.menu}>
+    <div className={styles.menu} data-theme={isDarkMode ? 'dark' : 'light'}>
       {isBurgerOpen && <Header />}
       <div className='container'>
         <div className={styles.menuContent}>{children}</div>

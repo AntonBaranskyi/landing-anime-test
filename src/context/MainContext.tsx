@@ -6,6 +6,8 @@ type State = {
   isBannerOpen: boolean;
   onToggleBurger: (bool: boolean) => void;
   onToggleBanner: () => void;
+  isDarkMode: boolean;
+  onTogglerDarkMode: () => void;
 };
 
 export const MainContext = createContext<State>({
@@ -13,6 +15,8 @@ export const MainContext = createContext<State>({
   isBannerOpen: false,
   onToggleBurger: () => {},
   onToggleBanner: () => {},
+  isDarkMode: false,
+  onTogglerDarkMode: () => {},
 });
 
 type Props = {
@@ -22,6 +26,9 @@ type Props = {
 export const MainProvider: React.FC<Props> = ({ children }) => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const [isBannerOpen, setIsBannerOpen] = useState(false);
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   const isDekstop = useMediaQuery({ minWidth: 1024 });
 
   useEffect(() => {
@@ -39,7 +46,18 @@ export const MainProvider: React.FC<Props> = ({ children }) => {
     setIsBannerOpen((prev) => !prev);
   };
 
-  const value = { isBurgerOpen, onToggleBurger, isBannerOpen, onToggleBanner };
+  const onTogglerDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
+
+  const value = {
+    isBurgerOpen,
+    onToggleBurger,
+    isBannerOpen,
+    onToggleBanner,
+    isDarkMode,
+    onTogglerDarkMode,
+  };
 
   return <MainContext.Provider value={value}>{children}</MainContext.Provider>;
 };

@@ -7,23 +7,27 @@ import { MainContext } from './context/MainContext';
 import { BurgerMenu } from './components/BurgerMenu';
 import { BurgerContent } from './components/BurgerContent';
 
+import styles from './App.module.scss';
+
 function App() {
-  const { isBurgerOpen } = useContext(MainContext);
+  const { isBurgerOpen, isDarkMode } = useContext(MainContext);
 
   return (
-    <>
+    <div className={styles.app} data-theme={isDarkMode ? 'dark' : 'light'}>
       <Header />
       <Banner />
 
       <Main />
-      <Footer />
+    
+        <Footer />
+    
 
       {isBurgerOpen && (
         <BurgerMenu>
           <BurgerContent />
         </BurgerMenu>
       )}
-    </>
+    </div>
   );
 }
 

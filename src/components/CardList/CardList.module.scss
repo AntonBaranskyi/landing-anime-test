@@ -13,6 +13,10 @@
     letter-spacing: 0.5px;
 
     margin-bottom: 9px;
+
+    &[data-theme='dark'] {
+      color: #fff;
+    }
   }
 
   .listProgress {

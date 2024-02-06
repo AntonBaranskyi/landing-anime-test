@@ -20,4 +20,8 @@
   text-align: left;
 
   margin-bottom: 60px;
+
+  &[data-theme='dark'] {
+    color: #fff;
+  }
 }
