@@ -1,0 +1,23 @@
+@import '../../styles/mixins/mixins.scss';
+
+.asideSocial {
+  display: none;
+
+  @include onDesktop {
+    position: absolute;
+
+    left: 0;
+    top: 25%;
+
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .socialImage {
+    width: 40px;
+    height: 40;
+
+    cursor: pointer;
+  }
+}

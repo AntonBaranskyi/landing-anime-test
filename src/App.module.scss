@@ -1,4 +1,5 @@
 .app {
+  position: relative;
   &[data-theme='dark'] {
     background-color: #0e1219;
   }

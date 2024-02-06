@@ -10,10 +10,22 @@ import { useContext } from 'react';
 import { MainContext } from '../../context/MainContext';
 import { BannerNav } from '../BannerNav';
 
+import android from '../../assets/icons/android.png';
+import apple from '../../assets/icons/apple.png';
+import download from '../../assets/icons/download.png';
+import { RatingWidget } from '../RatingWidget';
+
+const downloadBtnsData = [
+  { icon: android, title: 'Android' },
+  { icon: apple, title: 'iOS' },
+  { icon: download, title: 'Download' },
+];
+
 export const Banner = () => {
   const isDekstop = useMediaQuery({ minWidth: 1024 });
 
-  const { onToggleBanner, isBannerOpen, isDarkMode } = useContext(MainContext);
+  const { onToggleBanner, isBannerOpen, isDarkMode, userRating } =
+    useContext(MainContext);
 
   const handleToggleBanner = () => {
     onToggleBanner();
@@ -25,28 +37,69 @@ export const Banner = () => {
       data-theme={isDarkMode ? 'dark' : 'light'}
     >
       <div className='container' style={{ marginBottom: '15px' }}>
-        <div className={styles.banner}>
-          <div className={styles.bannerContent}>
-            <img className={styles.gamePhoto} src={game} alt='game' />
-            {isDekstop ? (
-              <div></div>
-            ) : (
-              <h2 className={styles.gameTitle}>Lorem Ipsum is simply dummy</h2>
+        <div
+          className={styles.desktopBanner}
+          data-theme={isDarkMode ? 'dark' : 'light'}
+        >
+          <div className={styles.banner}>
+            <div className={styles.bannerContent}>
+              <img className={styles.gamePhoto} src={game} alt='game' />
+              {isDekstop ? (
+                <div className={styles.bannerTitleMoreWrapper}>
+                  <h2 className={styles.gameTitle}>
+                    Lorem Ipsum is simply dummy
+                  </h2>
+                  <div className={styles.bannerDownloadWrapper}>
+                    {downloadBtnsData.map((btnData) => (
+                      <button
+                        className={styles.bannerBtn}
+                        data-isDownload={
+                          btnData.title === 'Download' ? true : null
+                        }
+                        key={btnData.title}
+                      >
+                        <img
+                          src={btnData.icon}
+                          alt='icon'
+                          className={styles.bannerBtnIcon}
+                        />
+                        <span className={styles.bannerBtnTitle}>
+                          {btnData.title}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <h2 className={styles.gameTitle}>
+                  Lorem Ipsum is simply dummy
+                </h2>
+              )}
+            </div>
+
+            {isDekstop && (
+              <>
+                <div className={styles.playersInfo}>
+                  <img src={rating} alt='people-rating' />
+
+                  <div className={styles.playersInfoDetails}>
+                    <h2 className={styles.playerTitle}>Players</h2>
+                    <h3 className={styles.playersVote}>12 votes</h3>
+                    <h5 className={styles.playerRating}>
+                      Your rating:{' '}
+                      <span className={styles.playerRatingItem}>
+                        {userRating}
+                      </span>
+                    </h5>
+                  </div>
+                </div>
+              </>
             )}
           </div>
-
           {isDekstop && (
-            <div className={styles.playersInfo}>
-              <img src={rating} alt='people-rating' />
-
-              <div className={styles.playersInfoDetails}>
-                <h2 className={styles.playerTitle}>Players</h2>
-                <h3 className={styles.playersVote}>12 votes</h3>
-                <h5 className={styles.playerRating}>
-                  Your rating:{' '}
-                  <span className={styles.playerRatingItem}>5.2</span>
-                </h5>
-              </div>
+            <div className={styles.bannerDeskBottomWrapper}>
+              <BannerNav />
+              <RatingWidget />
             </div>
           )}
         </div>

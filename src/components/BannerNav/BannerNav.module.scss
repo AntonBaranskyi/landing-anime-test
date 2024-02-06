@@ -1,3 +1,5 @@
+@import '../../styles/mixins/mixins.scss';
+
 .bannerMenu {
   display: flex;
   flex-direction: column;
@@ -6,9 +8,35 @@
 
   gap: 28px;
 
+  @include onDesktop {
+    flex-direction: row;
+  }
+
   .bannerList {
     list-style: none;
 
+    @include onDesktop {
+      display: flex;
+      gap: 19px;
+      align-items: center;
+      &:not(:last-child)::after {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 21px;
+        background-color: #707070;
+      }
+    }
+
+    .bannerDeskLink {
+      text-decoration: none;
+
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+
+      color: #707070;
+    }
     .bannerLink {
       text-decoration: none;
 

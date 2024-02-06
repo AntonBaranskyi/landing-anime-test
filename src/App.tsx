@@ -8,6 +8,7 @@ import { BurgerMenu } from './components/BurgerMenu';
 import { BurgerContent } from './components/BurgerContent';
 
 import styles from './App.module.scss';
+import { AsideSocial } from './components/AsideSocial';
 
 function App() {
   const { isBurgerOpen, isDarkMode } = useContext(MainContext);
@@ -15,12 +16,13 @@ function App() {
   return (
     <div className={styles.app} data-theme={isDarkMode ? 'dark' : 'light'}>
       <Header />
+      <AsideSocial />
+
       <Banner />
 
       <Main />
-    
-        <Footer />
-    
+
+      <Footer />
 
       {isBurgerOpen && (
         <BurgerMenu>

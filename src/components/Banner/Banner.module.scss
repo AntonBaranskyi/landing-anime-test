@@ -83,7 +83,53 @@
     z-index: 1;
   }
 
-  
+  .bannerTitleMoreWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .bannerDownloadWrapper {
+      display: flex;
+      gap: 8px;
+
+      .bannerBtn {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        height: 28px;
+        border-radius: 17px;
+        border: 1px solid #fff;
+
+        background-color: inherit;
+
+        cursor: pointer;
+
+        padding-block: 5px;
+        padding-left: 13px;
+        padding-right: 16px;
+
+        &[data-isDownload='true'] {
+          background: linear-gradient(90deg, #0dd0ba 0%, #2a86e5 100%);
+          border: none;
+        }
+
+        .bannerBtnTitle {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 18px;
+          letter-spacing: 0.5px;
+
+          color: #fff;
+        }
+
+        .bannerBtnIcon {
+          width: 13px;
+          height: 14px;
+        }
+      }
+    }
+  }
 }
 
 .bannerMore {
@@ -171,5 +217,32 @@
 
       color: #f9b936;
     }
+  }
+}
+
+.desktopBanner {
+  @include onDesktop {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 40px;
+
+    background-color: #fff;
+
+    box-shadow: 0px 22px 59px 0px #2a86e512;
+
+    &[data-theme='dark'] {
+      background: #0e1219;
+    }
+  }
+
+  .bannerDeskBottomWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 13px;
+
+    padding-left: 56px;
+    padding-right: 33px;
   }
 }
