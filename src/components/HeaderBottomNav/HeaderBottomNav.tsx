@@ -22,9 +22,11 @@ export const HeaderBottomNav: React.FC<Props> = ({
 }) => {
   const { isDarkMode } = useContext(MainContext);
 
+  const iteribleContent = isInsideBurger ? navigation.slice(4) : navigation;
+
   return (
     <ul className={styles.headerBottomList}>
-      {navigation.map((nav, i) => (
+      {iteribleContent.map((nav, i) => (
         <li key={i} className={styles.headerBottomItem}>
           <a
             href='#'
