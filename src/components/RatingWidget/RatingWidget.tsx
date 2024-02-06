@@ -2,13 +2,14 @@ import { useContext, useState } from 'react';
 import styles from './RatingWidget.module.scss';
 import { MainContext } from '../../context/MainContext';
 
+import cx from 'classnames';
+
 const dataArray = ['Note', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export const RatingWidget = () => {
   const { onSetUserRating, userRating, isDarkMode } = useContext(MainContext);
 
   const [currentRating, setCurrentRating] = useState(10 - userRating);
-
 
   const handleClickRating = (num: string | number) => {
     if (typeof num === 'number') {
@@ -31,11 +32,11 @@ export const RatingWidget = () => {
         style={
           { '--current-rating': `${currentRating}` } as React.CSSProperties
         }
-        className={
-          styles.ratingActiveBlock +
-          ' ' +
-          (currentRating === -1 ? '' : styles.active)
-        }
+        className={cx(
+          styles.ratingActiveBlock,
+          currentRating === -1 ? '' : styles.active,
+          userRating === 10 ? styles.rounded : null
+        )}
       />
       <div className={styles.ratingList}>
         {dataArray.map((num) => (
