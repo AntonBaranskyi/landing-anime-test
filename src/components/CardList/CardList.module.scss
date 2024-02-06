@@ -28,13 +28,14 @@
   }
 
   .cardList {
-    //   @include pageGrid();
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
 
     justify-content: center;
-    //   row-gap: 20px;
-    //   column-gap: 16px;
+
+    @include onDesktop {
+      justify-content: start;
+    }
   }
 }

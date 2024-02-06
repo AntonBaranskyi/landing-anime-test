@@ -1,3 +1,6 @@
+@import '../../styles/blocks/variables.scss';
+
+
 .menu {
   height: 100vh;
   overflow: hidden;
@@ -10,7 +13,7 @@
   width: 100%;
 
   &[data-theme='dark'] {
-    background-color: #0e1219;
+    background-color: $main-dark;
   }
 
   .menuContent {

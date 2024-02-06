@@ -31,7 +31,7 @@ type Props = {
 export const MainProvider: React.FC<Props> = ({ children }) => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const [isBannerOpen, setIsBannerOpen] = useState(false);
-  const [userRating, setUserRating] = useLocalStorage(0, 'rating');
+  const [userRating, setUserRating] = useState(0);
 
   const [isDarkMode, setIsDarkMode] = useLocalStorage(false, 'darkMode');
 

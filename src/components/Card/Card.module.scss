@@ -14,8 +14,11 @@
   }
 
   @include onTablet {
-    width: 308px;
-    // grid-column: span 3;
+    width: 340px;
+  }
+
+  @include onDesktop {
+    width: 320px;
   }
 
   .cardPhoto {

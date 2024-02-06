@@ -1,6 +1,9 @@
+@import '../../styles/blocks/variables.scss';
+
+
 .headerBottom {
   &[data-theme='dark'] {
-    background-color: #0e1219;
+    background-color: $main-dark;
   }
   .headerBottomContent {
     display: flex;

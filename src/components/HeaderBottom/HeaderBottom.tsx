@@ -12,7 +12,7 @@ import { Input } from '../Input';
 import { HeaderBottomNav } from '../HeaderBottomNav';
 
 export const HeaderBottom = () => {
-  const isDekstop = useMediaQuery({ minWidth: 1024 });
+  const isDekstop = useMediaQuery({ minWidth: 1200 });
 
   const { onToggleBurger, isBurgerOpen, isDarkMode } = useContext(MainContext);
 

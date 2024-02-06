@@ -22,7 +22,7 @@ const downloadBtnsData = [
 ];
 
 export const Banner = () => {
-  const isDekstop = useMediaQuery({ minWidth: 1024 });
+  const isDekstop = useMediaQuery({ minWidth: 1200 });
 
   const { onToggleBanner, isBannerOpen, isDarkMode, userRating } =
     useContext(MainContext);

@@ -24,6 +24,8 @@
   }
 }
 
+@import '../../styles/blocks/variables.scss';
+
 .content {
   padding-inline: 16px;
   @include onTablet {
@@ -39,7 +41,7 @@
   background-color: #fcfcfc;
 
   &[data-theme='dark'] {
-    background-color: #0e1219;
+    background-color: $main-dark;
   }
 }
 

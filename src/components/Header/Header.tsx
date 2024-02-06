@@ -20,7 +20,7 @@ const socialIcons = [
 ];
 
 export const Header = () => {
-  const isTablet = useMediaQuery({ minWidth: 576 });
+  const isTablet = useMediaQuery({ minWidth: 650 });
 
   return (
     <header className={styles.header}>
