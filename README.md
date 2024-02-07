@@ -1,4 +1,4 @@
-# Space test task (test task)
+# Anime test task (test task)
 
  Please, check the demo page of the app --- [DEMO](https://landing-anime-test.vercel.app/)
   
